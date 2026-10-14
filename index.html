@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ROXUDEV — Studio kreatif digital yang membangun pengalaman web aesthetic, cepat, dan berkesan.">
+  <meta name="theme-color" content="#6d5efc">
+  <title>ROXUDEV — Aesthetic Studio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Preconnect (opsional, untuk performa gambar) -->
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+  <!-- Terapkan tema sebelum render supaya loader tidak berkedip (INLINE — jangan dipindah!) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('roxu-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute(
+          'data-theme',
+          saved || (prefersDark ? 'dark' : 'light')
+        );
+      } catch (e) { /* localStorage tidak tersedia */ }
+    })();
+  </script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="loading">
+
+  <!-- ===== FALLBACK NOSCRIPT ===== -->
+  <noscript>
+    <style>
+      .loader { display: none !important; }
+      body.loading { overflow: auto !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <!-- ============================================================
+       LOADER — ANIMASI KUBUS
+       ============================================================ -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Memuat halaman">
+    <div class="loader-inner">
+      <div class="cube-stage">
+        <div class="cube h1 w1 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w1 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w1 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w2 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w2 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w2 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w3 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w3 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h1 w3 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+
+        <div class="cube h2 w1 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w1 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w1 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w2 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w2 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w2 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w3 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w3 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h2 w3 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+
+        <div class="cube h3 w1 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w1 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w1 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w2 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w2 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w2 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w3 l1"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w3 l2"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+        <div class="cube h3 w3 l3"><div class="face top"></div><div class="face left"></div><div class="face right"></div></div>
+      </div>
+    </div>
+
+    <div class="loader-progress">
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Grid Kaca Ungu -->
+  <div class="glass-grid" aria-hidden="true"></div>
+
+  <!-- Background Aurora -->
+  <div class="aurora" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#home" class="logo" aria-label="ROXUTECH">
+        <span class="letter" aria-hidden="true">R</span>
+        <span class="letter" aria-hidden="true">O</span>
+        <span class="letter" aria-hidden="true">X</span>
+        <span class="letter" aria-hidden="true">U</span>
+        <span class="letter" aria-hidden="true">T</span>
+        <span class="letter" aria-hidden="true">E</span>
+        <span class="letter" aria-hidden="true">C</span>
+        <span class="letter" aria-hidden="true">H</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ubah tema warna">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </button>
+
+        <button class="hamburger" id="hamburger" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#home">Beranda</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-content reveal">
+        <div class="badge">
+          <span class="dot" aria-hidden="true"></span> Tersedia untuk proyek baru
+        </div>
+        <h1>Join <span class="gradient-text">ROXU</span> untuk masa depan digital.</h1>
+        <p>Kami membangun pengalaman tentang dunia digital termasuk pengembangan teknologi juga tempat berkolaborasi sharing &amp; edukasi dengan ROXU Komunitas open source di Indonesia.</p>
+        <div class="hero-btns">
+          <a href="#kontak" class="btn btn-primary">
+            Hubungi Kami
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/6283862939550" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Contact Personal</a>
+        </div>
+      </div>
+
+      <!-- KARTU GAMBAR -->
+      <div class="image-card-wrapper reveal">
+        <div class="image-card">
+          <div class="image-card-inner">
+            <img
+              src="https://res.cloudinary.com/thievxu1/image/upload/v1791918229/iv3o69hry5oe5lfmhspj.jpg"
+              alt="ROXU Creative Visual"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="image-card-overlay">
+              <span class="image-card-tag">ROXU VISUAL</span>
+              <h3 class="image-card-title">Creative Digital Experience</h3>
+              <p class="image-card-desc">Eksplorasi visual yang menggabungkan teknologi dan estetika.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="kontak">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Siap Memulai <span class="gradient-text">Development?</span></h2>
+          <p>Mari berkolaborasi menciptakan sesuatu yang luar biasa. Hubungi personal kami langsung!</p>
+          <a href="https://wa.me/6283862939550" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Mulai Sekarang
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo logo-footer" aria-label="ROXU COMMUNITY">
+          <span class="logo-text">ROXU COMMUNITY</span>
+        </a>
+        <p>Studio kreatif digital yang membangun pengalaman web aesthetic, cepat, dan berkesan.</p>
+        <div class="socials">
+          <a href="https://t.me/roxuswipe" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+            </svg>
+          </a>
+
+          <a href="https://www.instagram.com/rokushi.official" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <a href="https://www.facebook.com/rokushi.official" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+
+          <a href="https://discord.gg/VsbkK6pJm" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.32 4.37A19.79 19.79 0 0 0 15.45 3c-.2.36-.43.85-.59 1.23a18.27 18.27 0 0 0-5.72 0C8.98 3.85 8.74 3.36 8.54 3a19.74 19.74 0 0 0-4.87 1.37C.55 9.05-.3 13.6.13 18.08a19.9 19.9 0 0 0 6.06 3.07c.49-.67.92-1.38 1.29-2.13-.71-.27-1.39-.6-2.03-.98.17-.13.34-.26.5-.4a14.24 14.24 0 0 0 12.1 0c.16.14.33.27.5.4-.64.38-1.32.71-2.04.98.37.75.8 1.46 1.29 2.13a19.86 19.86 0 0 0 6.07-3.07c.5-5.2-.85-9.7-3.55-13.71zM8.02 15.33c-1.18 0-2.16-1.09-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.33-.95 2.42-2.16 2.42zm7.96 0c-1.18 0-2.16-1.09-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.33-.95 2.42-2.16 2.42z"/>
+            </svg>
+          </a>
+
+          <a href="https://github.com/roxu-coder" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2A10 10 0 0 0 8.84 21.5c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Produk</h4>
+        <ul>
+          <li><a href="#">Fitur</a></li>
+          <li><a href="#">Harga</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Tentang</h4>
+        <ul>
+          <li><a href="https://rokush1x.github.io/web" target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="mailto:rokushi.dev@gmail.com">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Dukungan</h4>
+        <ul>
+          <li><a href="mailto:rokusec.hub@proton.me">Bantuan</a></li>
+          <li><a href="mailto:rokushi.me@protonmail.com">Privasi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <i>© 2019 ROXU COMMUNITY. Hak cipta dilindungi.</i>
+      <i>Design by s1xday ft.ROXU</i>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
